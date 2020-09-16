@@ -1,0 +1,54 @@
+﻿@model List<WebFinal2.Models.ViewModels.ListTablaViewModel>
+
+
+<center><h5 class="text-dark">LISTADO DE OPERACIONES</h5></center>
+<br />
+
+@*<a href="~/Tabla/nuevo" class="btn btn-sm btn-primary justify-content-around">Agregar</a>*@
+
+<center><p class="text-dark">Egreso= tipo 1 / Ingreso= tipo 2</p></center>
+<br />
+
+<div class="row">
+
+
+   
+
+    <div class="col-md-12">
+
+        <table class="table text-dark">
+            <tr>
+                <th>Id</th>
+                <th>Concepto</th>
+                <th>Monto</th>
+                <th>Tipo</th>
+
+
+
+            </tr>
+
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.id_operacion</td>
+                    <td>@oElemento.concepto</td>
+                    <td>@oElemento.monto</td>
+                    <td>@oElemento.tipo</td>
+
+                    <td>
+                        <a class="btn btn-sm btn-secondary" href="~/Tabla/Editar/@oElemento.id_operacion">Editar</a>
+                        <a class="btn btn-sm btn-danger" href="~/Tabla/Eliminar/@oElemento.id_operacion">Eliminar</a>
+                    </td>
+                </tr>
+
+
+            }
+
+        </table>
+
+
+
+
+    </div>
+
+</div>

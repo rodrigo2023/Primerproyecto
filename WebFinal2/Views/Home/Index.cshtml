@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Presupuestos</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/blog-home.css" rel="stylesheet">
+</head>
+<body>
+
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#">Inicio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               
+                <ul class="navbar-nav ml-right my-2 my-lg-0">
+         
+                </ul>
+            </div>
+
+
+            @Html.Partial("_LoginPartial")
+
+        </div>
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+                <br />
+                <center>
+                    <h3 class="my-4">
+                        GESTOR DE PRESUPUESTO
+                        
+                    </h3>
+                </center>
+                <!-- Blog Post -->
+                <br />
+                
+                <div class="card mb-4">
+                    <img class="card-img-top" src="@Url.Content("~/Content/img/egresos1.jpg")" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">REGISTRO DE OPERACIONES</h4>
+                        <p class="card-text">Acceda al ingreso de registros donde podra administrar su presupuesto personal</p>
+                        <center><a href="http://localhost:53686/TABLA/nuevo" class="btn btn-primary">LISTADO DE POST </a></center>
+                        
+
+                    </div>
+                   
+                </div>
+               
+          
+                <!-- Pagination -->
+             
+            </div>
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+              
+                <!-- Categories Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header">Categorias</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    
+                                    <a href="http://localhost:53686/TABLA/nuevo">Registrar</a>
+                                  
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="http://localhost:53686/TABLA/index">Listado de Operaciones</a>
+                                    </li>
+                                  
+                                  
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_Footer")
+
+</body>
+</html>

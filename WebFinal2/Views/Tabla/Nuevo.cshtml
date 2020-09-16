@@ -1,0 +1,81 @@
+﻿
+@model WebFinal2.Models.ViewModels.TablaViewModel
+
+
+
+
+
+
+
+        <center><h5 class="text-dark">Alta</h5></center>
+
+        <br>
+
+        @using (Html.BeginForm("Nuevo", "Tabla", FormMethod.Post))
+        {
+
+            <div class="row justify-content-center">
+
+                <div class="col-sm-3">
+
+                    <hr class="bg-dark" />
+
+                    <div>
+
+                        @Html.LabelFor(d => d.concepto, new { @class = "text-dark" })
+                        @Html.TextBoxFor(d => d.concepto, " ", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.concepto, null, new { @class = "text-danger" })
+                    </div>
+
+
+                    <br>
+
+                    <div>
+
+                        @Html.LabelFor(d => d.monto, new { @class = "text-dark" })
+                        @Html.TextBoxFor(d => d.monto, " ", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.monto, null, new { @class = "red" })
+
+                    </div>
+                    <br>
+
+
+                    <div>
+
+                        @Html.LabelFor(d => d.fecha_op, new { @class = "text-dark" })
+                        @Html.EditorFor(d => d.fecha_op, " ", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.fecha_op, null, new { @class = "red" })
+
+                    </div>
+
+                    <br />
+                  
+
+                    <p class="card-text">Egreso= tipo 1 /  Ingreso= tipo 2</p>
+               
+
+                    <div>
+
+                        @Html.LabelFor(d => d.tipo, new { @class = "text-dark" })
+                        @Html.EditorFor(d => d.tipo, " ", new { @class = "form-control min=1 max=2" })
+                        @Html.ValidationMessageFor(d => d.tipo, null, new { @class = "red" })
+
+                    </div>
+
+
+                    <br />
+                    <br />
+
+                    <div>
+
+                        <center><input value="Guardar" class="btn btn-primary" type="submit" /></center>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        }

@@ -1,0 +1,101 @@
+﻿@model WebFinal2.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Registrarse";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="~/Content/css/_fondoLogin.css" />
+
+
+</head>
+<body>
+
+
+    @*<center><h4 class="text-white mt-0 ">@ViewBag.Title.</h4></center>*@
+
+    <div class="row justify-content-center container-fluid p-0">
+        <div class=" justify-content-center">
+
+
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <center><h5 class="text-secondary mt-0 justify-content-center">Registrarse</h5></center>
+                <br>
+                <br>
+               
+
+
+
+
+
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                <div class="col-md-12">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-11 control-label text-white" })
+
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="col-md-12">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label text-white" })
+                    <div class="col-md-12">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                </div>
+
+
+                <br>
+
+                <div class="col-md-12">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-11 control-label text-white" })
+                    <div class="col-md-12">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    </div>
+                </div>
+
+
+
+                <br>
+                <br>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-13">
+                        <center><input type="submit" class="btn btn-outline-light" value="Registrarse" /></center>
+                    </div>
+
+
+                    <br>
+                   
+
+                </div>
+            }
+
+
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+
+
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
